@@ -113,17 +113,17 @@ def main():
 
     input_df = get_user_input()
 
-    #model = xgb.XGBRegressor()
-    #model.load_model('XGBoost.sav')
+    import xgboost as xgb
+    import streamlit as st
+    import pandas as pd
+    model = xgb.XGBRegressor()
+    model.load_model('XGBoost.sav')
 
     if st.button("Tahminle"):
         output = predict(model, input_df)
         st.success(f'Hastanın tahmini hastanede yatış süresi {output[0]:.1f} gündür')
 
 if __name__ == '__main__':
-    import xgboost as xgb
-    import streamlit as st
-    import pandas as pd
     main()
     
 #@st.cache
