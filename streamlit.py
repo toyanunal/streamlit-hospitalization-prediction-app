@@ -1,7 +1,3 @@
-import xgboost as xgb
-import streamlit as st
-import pandas as pd
-
 # Function for user input
 def get_user_input():
     fluconazole = st.selectbox('Flukonazol tedavisi:', ['Evet','Hayır'])
@@ -125,6 +121,9 @@ def main():
         st.success(f'Hastanın tahmini hastanede yatış süresi {output[0]:.1f} gündür')
 
 if __name__ == '__main__':
+    import xgboost as xgb
+    import streamlit as st
+    import pandas as pd
     main()
     
 #@st.cache
