@@ -109,7 +109,7 @@ def main():
     # <h2 style="color:white;text-align:center;">Streamlit XGBoost ML App </h2>
     # </div>
     # """
-    st.markdown(html_temp,unsafe_allow_html=True)
+    #st.markdown(html_temp,unsafe_allow_html=True)
 
     input_df = get_user_input()
 
