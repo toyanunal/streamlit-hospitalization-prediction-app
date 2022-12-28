@@ -101,14 +101,14 @@ def predict(model, input_df):
 # Function for displaying the predictions
 def main():
     st.title("Hastanede Yatış Süresi Tahminleme")
-    st.image("https://www.oreilly.com/library/view/python-data-science/9781491912126/assets/pds_0101.png", width=300)
+    #st.image("https://www.oreilly.com/library/view/python-data-science/9781491912126/assets/pds_0101.png", width=300)
     st.header("Lütfen aşağıdaki hasta bilgilerini giriniz:")
 
-    html_temp = """
-    <div style="background-color:tomato;padding:10px">
-    <h2 style="color:white;text-align:center;">Streamlit XGBoost ML App </h2>
-    </div>
-    """
+    # html_temp = """
+    # <div style="background-color:tomato;padding:10px">
+    # <h2 style="color:white;text-align:center;">Streamlit XGBoost ML App </h2>
+    # </div>
+    # """
     st.markdown(html_temp,unsafe_allow_html=True)
 
     input_df = get_user_input()
