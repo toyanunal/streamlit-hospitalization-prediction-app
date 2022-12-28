@@ -111,10 +111,6 @@ def main():
     # """
     #st.markdown(html_temp,unsafe_allow_html=True)
 
-    import xgboost as xgb
-    import streamlit as st
-    import pandas as pd
-    
     input_df = get_user_input()
 
     model = xgb.XGBRegressor()
@@ -125,6 +121,9 @@ def main():
         st.success(f'Hastanın tahmini hastanede yatış süresi {output[0]:.1f} gündür')
 
 if __name__ == '__main__':
+    import xgboost as xgb
+    import streamlit as st
+    import pandas as pd
     main()
     
 #@st.cache
