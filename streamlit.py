@@ -111,11 +111,12 @@ def main():
     # """
     #st.markdown(html_temp,unsafe_allow_html=True)
 
-    input_df = get_user_input()
-
     import xgboost as xgb
     import streamlit as st
     import pandas as pd
+    
+    input_df = get_user_input()
+
     model = xgb.XGBRegressor()
     model.load_model('XGBoost.sav')
 
