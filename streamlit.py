@@ -2,11 +2,6 @@ import xgboost as xgb
 import streamlit as st
 import pandas as pd
 
-model = xgb.XGBRegressor()
-model.load_model('XGBoost.sav')
-
-@st.cache
-
 # Function for user input
 def get_user_input():
     fluconazole = st.selectbox('Flukonazol tedavisi:', ['Evet','Hayır'])
@@ -122,6 +117,9 @@ def main():
 
     input_df = get_user_input()
 
+    model = xgb.XGBRegressor()
+    model.load_model('XGBoost.sav')
+
     if st.button("Tahminle"):
         output = predict(model, input_df)
         st.success(f'Hastanın tahmini hastanede yatış süresi {output[0]:.1f} gündür')
@@ -129,4 +127,4 @@ def main():
 if __name__ == '__main__':
     main()
     
-
+#@st.cache
