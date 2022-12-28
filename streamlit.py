@@ -114,7 +114,10 @@ def main():
     input_df = get_user_input()
 
     model = xgb.XGBRegressor()
-    model.load_model("XGBoost.sav")
+    # load model
+
+
+    #model.load_model("XGBoost.sav")
 
     if st.button("Tahminle"):
         output = predict(model, input_df)
