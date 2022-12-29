@@ -115,13 +115,12 @@ def main():
     print(input_df)
 
     model = xgb.XGBRegressor()
-    #model.load_model("model.json")
-    #with open(path, 'r', encoding="utf8", errors='ignore') as f:
+    model.load_model("XGBoost.json")
     
     
 
     if st.button("Tahminle"):
-        output = predict(model, input_df)
+        #output = predict(model, input_df)
         st.success(f'Hastanın tahmini hastanede yatış süresi {output[0]:.1f} gündür')
 
 if __name__ == '__main__':
