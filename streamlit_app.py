@@ -116,7 +116,7 @@ def main():
 
     model = xgb.XGBRegressor()
     #model.load_model("model.json")
-    with open(path, 'r', encoding="utf8", errors='ignore') as f:
+    #with open(path, 'r', encoding="utf8", errors='ignore') as f:
     
     
 
