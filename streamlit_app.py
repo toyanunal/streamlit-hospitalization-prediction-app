@@ -112,9 +112,13 @@ def main():
     #st.markdown(html_temp,unsafe_allow_html=True)
 
     input_df = get_user_input()
+    print(input_df)
 
     model = xgb.XGBRegressor()
-    model.load_model("model.json")
+    #model.load_model("model.json")
+    with open(path, 'r', encoding="utf8", errors='ignore') as f:
+    
+    
 
     if st.button("Tahminle"):
         output = predict(model, input_df)
