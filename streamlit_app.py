@@ -114,7 +114,7 @@ def main():
     st.title("Hastanede Yatış Süresi Tahminleme")
     qrcode = Image.open('qrcode.png')
     st.image(qrcode, width=300)
-    st.header("Lütfen aşağıdaki hasta bilgilerini giriniz:")
+    st.subheader("Lütfen aşağıdaki hasta bilgilerini giriniz:")
 
     # html_temp = """
     # <div style="background-color:tomato;padding:10px">
