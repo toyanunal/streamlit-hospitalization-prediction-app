@@ -112,7 +112,8 @@ def predict(model, input_df):
     return prediction
 
 # Function for background image
-#@st.cache(allow_output_mutation=True)
+import streamlit as st
+@st.cache(allow_output_mutation=True)
 def get_base64_of_bin_file(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
@@ -153,7 +154,7 @@ def main():
     # </div>
     # """
 
-    set_png_as_page_bg('background.jpg')
+    set_png_as_page_bg('background.png')
 
     # bg_image = '''
     # <style>
