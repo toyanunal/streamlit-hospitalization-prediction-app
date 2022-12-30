@@ -159,7 +159,7 @@ def main():
     input_df = get_user_input()
 
     model = xgb.XGBRegressor()
-    with open("XGBoost.json", 'rb') as f:
+    with open("XGBoost.sav", 'rb') as f:
         model = pkl.load(f)
 
     if st.button("Tahminle"):
