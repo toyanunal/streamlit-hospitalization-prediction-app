@@ -142,7 +142,7 @@ def set_png_as_page_bg(png_file):
 def main():
     st.set_page_config(
         page_title="HYS Tahminleme Modeli",
-        page_icon="🧊",
+        page_icon="random", #🧊
         #layout="wide",
         #initial_sidebar_state="expanded"
         )
@@ -156,7 +156,6 @@ def main():
     set_png_as_page_bg('background.png')
 
     input_df = get_user_input()
-    print(input_df)
 
     model = xgb.XGBRegressor()
     with open("XGBoost.json", 'rb') as f:
