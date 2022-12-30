@@ -111,7 +111,6 @@ def get_user_input():
 
     st.write('The input dataframe:')
     st.dataframe(input_df)
-    #input_arr = np.array(input_df, dtype=object)
     return input_df
 
 # Function for making prediction
@@ -164,6 +163,21 @@ def main():
     if st.button("Tahminle"):
         output = predict(model, input_df)
         st.success(f'Hastanın hastanede yatış süresi tahmini {output[0]:.0f} gündür.')
+    
+    import time
+    my_bar = st.progress(0)
+    for percent_complete in range(100):
+        time.sleep(0.1)
+        my_bar.progress(percent_complete + 1)
+    st.spinner()
+    with st.spinner(text='In progress'):
+        time.sleep(5)
+        st.success('Done')
+    st.balloons()
+    st.error('Error message')
+    st.warning('Warning message')
+    st.info('Info message')
+    st.success('Success message')
 
 if __name__ == '__main__':
     main()
