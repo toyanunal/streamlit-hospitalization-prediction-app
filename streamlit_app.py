@@ -118,16 +118,8 @@ def main():
         page_title="HYS Tahminleme Modeli",
         page_icon="🧊",
         #layout="wide",
-        initial_sidebar_state="expanded"
+        #initial_sidebar_state="expanded"
     )
-
-    st.sidebar.header('Choose your weightings')
-    st.sidebar.markdown('You can change the weightings of the features in the model')
-    st.sidebar.markdown('The default weightings are:')
-    st.sidebar.markdown('**Hafta:** 0.1')
-    st.sidebar.markdown('**Flukonazol alımı:** 0.1')
-    st.sidebar.markdown('**Doğum kilosu_kategorik:** 0.1')
-    st.sidebar.markdown('**TPN:** 0.1')
 
     st.title("Hastanede Yatış Süresi Tahminleme")
     qrcode = Image.open('qrcode.png')
