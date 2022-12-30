@@ -1,7 +1,10 @@
 # Function for user input
 def get_user_input():
-    age = st.number_input('Gestasyonel yaş (hafta):', min_value=21.00, max_value=45.00, value=38.00, step=0.14285714285)
-    
+    week = st.number_input('Gestasyonel yaş (hafta):', min_value=21, max_value=45, value=30, step=1)
+    day = st.radio('Gestasyonel yaş (gün):', ['0','1','2','3','4','5','6'])
+    day = int(day)
+    age = week + day/7
+
     fluconazole = st.radio('Flukonazol tedavisi:', ['Yok','Var'])
     if fluconazole == 'Yok':
         fluconazole = 0
