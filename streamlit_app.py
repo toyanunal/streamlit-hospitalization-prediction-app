@@ -101,8 +101,8 @@ def get_user_input():
     #                         dtype=float,
     #                         index=['input'])
 
-    input_df = pd.DataFrame([[age, weight, birth, antibiotic, chorioamnionitis, respiratory, polisitemia, uak, ventilation, tpn, fluconazole, antibiotic_24h, ampicillin, penicillin, amikacin]],
-                            columns=['Hafta', 'Doğum kilosu_kategorik', 'Doğum şekli', 'Ab var/yok', 'Mr-40', 'Tanı-1', 'Tanı-4', 'Umblikal Arter', 'Ventilasyon tipi (ilk yatış)', 'TPN', 'Flukonazol alımı', 'İlk 24 saat Ab', 'Ab-14', 'Ab-12', 'Ab-8'],
+    input_df = pd.DataFrame([[age, fluconazole, weight, tpn, uak, polisitemia, antibiotic, amikacin, antibiotic_24h, chorioamnionitis, birth, respiratory, uak, ampicillin, penicillin, ventilation]],
+                            columns=['Hafta', 'Flukonazol alımı', 'Doğum kilosu_kategorik', 'TPN', 'Umblikal Arter', 'Tanı-4', 'Ab var/yok', 'Ab-8', 'İlk 24 saat Ab', 'Mr-40', 'Doğum şekli', 'Tanı-1', 'Ab-14', 'Ab-12', 'Ventilasyon tipi (ilk yatış)'],
                             dtype=float,
                             index=['input'])
 
