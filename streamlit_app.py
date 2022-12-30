@@ -154,7 +154,7 @@ def main():
     # </div>
     # """
 
-    set_png_as_page_bg('background.png')
+    set_png_as_page_bg('background.jpg')
 
     # bg_image = '''
     # <style>
