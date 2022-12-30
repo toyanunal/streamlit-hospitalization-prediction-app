@@ -6,63 +6,15 @@ def get_user_input():
     day = int(day)
     age = week + day/7
 
-    fluconazole = st.radio('Flukonazol tedavisi:', ['Yok','Var'])
-    if fluconazole == 'Yok':
-        fluconazole = 0
-    else:
-        fluconazole = 1
-    
-    weigth = st.radio('Doğum ağırlığı (kategorik):', ['≤1000 gr','1001-1500 gr','1501-2500 gr','>2500 gr'])
-    if weigth == '≤1000 gr':
-        weigth = 1
-    elif weigth == '1001-1500 gr':
-        weigth = 2
-    elif weigth == '1501-2500 gr':
-        weigth = 3
-    elif weigth == '>2500 gr':
-        weigth = 4
-
-    tpn = st.radio('TPN ihtiyacı:', ['Yok','Var'])
-    if tpn == 'Yok':
-        tpn = 0
-    else:
-        tpn = 1
-    
-    uak = st.radio('UAK:', ['Yok','Var'])
-    if uak == 'Yok':
-        uak = 0
-    else:
-        uak = 1
-
-    polisitemia = st.radio('Polisitemi:', ['Yok','Var'])
-    if polisitemia == 'Yok':
-        polisitemia = 0
-    else:
-        polisitemia = 1
-
-    antibiotic = st.radio('Maternal risk faktörü:', ['Yok','Var'])
-    if antibiotic == 'Yok':
-        antibiotic = 0
-    else:
-        antibiotic = 1
-
-    amikacin = st.radio('Amikasin antibiyoterapisi:', ['Yok','Var'])
-    if amikacin == 'Yok':
-        amikacin = 0
-    else:
-        amikacin = 1
-
-    antibiotic_24h = st.radio('İlk 24 saat antibiyoterapi:', ['Yok','Var'])
-    if antibiotic_24h == 'Yok':
-        antibiotic_24h = 0
-    else:
-        antibiotic_24h = 1
-    
-    chorioamnionitis = st.radio('Koryoamniyonit:', ['Yok','Var'])
-    if chorioamnionitis == 'Yok':
-        chorioamnionitis = 0
-    else:
-        chorioamnionitis = 1
+    weight = st.radio('Doğum ağırlığı (kategorik):', ['≤1000 gr','1001-1500 gr','1501-2500 gr','>2500 gr'])
+    if weight == '≤1000 gr':
+        weight = 1
+    elif weight == '1001-1500 gr':
+        weight = 2
+    elif weight == '1501-2500 gr':
+        weight = 3
+    elif weight == '>2500 gr':
+        weight = 4
     
     birth = st.radio('Doğum şekli:', ['C/S','NSVY'])
     if birth == 'C/S':
@@ -70,24 +22,36 @@ def get_user_input():
     else:
         birth = 0
 
+    antibiotic = st.radio('Maternal risk faktörü:', ['Yok','Var'])
+    if antibiotic == 'Yok':
+        antibiotic = 0
+    else:
+        antibiotic = 1
+
+    chorioamnionitis = st.radio('Koryoamniyonit:', ['Yok','Var'])
+    if chorioamnionitis == 'Yok':
+        chorioamnionitis = 0
+    else:
+        chorioamnionitis = 1
+
     respiratory = st.radio('Solunumsal patolojiler:', ['Yok','Var'])
     if respiratory == 'Yok':
         respiratory = 0
     else:
         respiratory = 1
-    
-    ampicillin = st.radio('Ampisilin antibiyoterapisi:', ['Yok','Var'])
-    if ampicillin == 'Yok':
-        ampicillin = 0
+
+    polisitemia = st.radio('Polisitemi:', ['Yok','Var'])
+    if polisitemia == 'Yok':
+        polisitemia = 0
     else:
-        ampicillin = 1
- 
-    penicillin = st.radio('Penisilin antibiyoterapisi:', ['Yok','Var'])
-    if penicillin == 'Yok':
-        penicillin = 0
+        polisitemia = 1
+
+    uak = st.radio('UAK:', ['Yok','Var'])
+    if uak == 'Yok':
+        uak = 0
     else:
-        penicillin = 1
-    
+        uak = 1
+
     ventilation = st.radio('Ventilasyon tipi:', ['Yok','NIV','iMV'])
     if ventilation == 'Yok':
         ventilation = 0
@@ -95,14 +59,50 @@ def get_user_input():
         ventilation = 1
     elif ventilation == 'iMV':
         ventilation = 2
+
+    tpn = st.radio('TPN ihtiyacı:', ['Yok','Var'])
+    if tpn == 'Yok':
+        tpn = 0
+    else:
+        tpn = 1
+
+    fluconazole = st.radio('Flukonazol tedavisi:', ['Yok','Var'])
+    if fluconazole == 'Yok':
+        fluconazole = 0
+    else:
+        fluconazole = 1
+    
+    antibiotic_24h = st.radio('İlk 24 saat antibiyoterapi:', ['Yok','Var'])
+    if antibiotic_24h == 'Yok':
+        antibiotic_24h = 0
+    else:
+        antibiotic_24h = 1
+    
+    ampicillin = st.radio('Ampisilin antibiyoterapisi:', ['Yok','Var'])
+    if ampicillin == 'Yok':
+        ampicillin = 0
+    else:
+        ampicillin = 1
+
+    penicillin = st.radio('Penisilin antibiyoterapisi:', ['Yok','Var'])
+    if penicillin == 'Yok':
+        penicillin = 0
+    else:
+        penicillin = 1
+    
+    amikacin = st.radio('Amikasin antibiyoterapisi:', ['Yok','Var'])
+    if amikacin == 'Yok':
+        amikacin = 0
+    else:
+        amikacin = 1
      
-    # input_df = pd.DataFrame([[age, fluconazole, weigth, tpn, uak, polisitemia, antibiotic, amikacin, antibiotic_24h, chorioamnionitis, birth, respiratory, ampicillin, penicillin, ventilation]],
-    #                         columns=['age', 'fluconazole', 'weigth', 'tpn', 'uak', 'polisitemia', 'antibiotic', 'amikacin', 'antibiotic_24h', 'chorioamnionitis', 'birth', 'respiratory', 'ampicillin', 'penicillin', 'ventilation'],
+    # input_df = pd.DataFrame([[age, fluconazole, weight, tpn, uak, polisitemia, antibiotic, amikacin, antibiotic_24h, chorioamnionitis, birth, respiratory, ampicillin, penicillin, ventilation]],
+    #                         columns=['age', 'fluconazole', 'weight', 'tpn', 'uak', 'polisitemia', 'antibiotic', 'amikacin', 'antibiotic_24h', 'chorioamnionitis', 'birth', 'respiratory', 'ampicillin', 'penicillin', 'ventilation'],
     #                         dtype=float,
     #                         index=['input'])
 
-    input_df = pd.DataFrame([[respiratory, amikacin, polisitemia, chorioamnionitis, fluconazole, weigth, ventilation, birth, ampicillin, age, antibiotic_24h, penicillin, uak, tpn, antibiotic]],
-                            columns=['respiratory', 'amikacin', 'polisitemia', 'chorioamnionitis', 'fluconazole', 'weigth', 'ventilation', 'birth', 'ampicillin', 'age', 'antibiotic_24h', 'penicillin', 'uak', 'tpn', 'antibiotic'],
+    input_df = pd.DataFrame([[age, weight, birth, antibiotic, chorioamnionitis, respiratory, polisitemia, uak, ventilation, tpn, fluconazole, antibiotic_24h, ampicillin, penicillin, amikacin]],
+                            columns=['Hafta', 'Doğum kilosu_kategorik', 'Doğum şekli', 'Ab var/yok', 'Mr-40', 'Tanı-1', 'Tanı-4', 'Umblikal Arter', 'Ventilasyon tipi (ilk yatış)', 'TPN', 'Flukonazol alımı', 'İlk 24 saat Ab', 'Ab-14', 'Ab-12', 'Ab-8'],
                             dtype=float,
                             index=['input'])
 
