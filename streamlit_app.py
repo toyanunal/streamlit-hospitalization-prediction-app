@@ -1,6 +1,6 @@
 # Function for user input
 def get_user_input():
-    age = st.number_input('Gestasyonel yaş (hafta):', min_value=21.00, max_value=45.00, value=38.00)
+    age = st.number_input('Gestasyonel yaş (hafta):', min_value=21.00, max_value=45.00, value=38.00, step="0.14285714285")
     
     fluconazole = st.selectbox('Flukonazol tedavisi:', ['Yok','Var'])
     if fluconazole == 'Yok':
