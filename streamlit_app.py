@@ -166,8 +166,8 @@ def main():
         with st.spinner(text='Hesaplanıyor...'):
             #time.sleep(2)
             my_bar = st.progress(0)
-            for percent_complete in range(20):
-                time.sleep(0.1)
+            for percent_complete in range(100):
+                time.sleep(0.02)
                 my_bar.progress(percent_complete + 1)
             st.success(f'Hastanın hastanede yatış süresi tahmini {output[0]:.0f} gündür.')
             st.subheader(f'{output[0]:.0f} gündür.')
