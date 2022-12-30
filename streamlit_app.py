@@ -148,24 +148,18 @@ def main():
     st.image(qrcode, width=300)
     st.subheader("Lütfen aşağıdaki hasta bilgilerini giriniz:")
 
-    # html_temp = """
-    # <div style="background-color:tomato;padding:10px">
-    # <h2 style="color:white;text-align:center;">Streamlit XGBoost ML App </h2>
-    # </div>
-    # """
+    #set_png_as_page_bg('background.png')
 
-    set_png_as_page_bg('background.png')
+    bg_image = '''
+    <style>
+    .stApp {
+    background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
+    background-size: cover;
+    }
+    </style>
+    '''
 
-    # bg_image = '''
-    # <style>
-    # body {
-    # background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
-    # background-size: cover;
-    # }
-    # </style>
-    # '''
-
-    # st.markdown(bg_image, unsafe_allow_html=True)
+    st.markdown(bg_image, unsafe_allow_html=True)
 
 
 
