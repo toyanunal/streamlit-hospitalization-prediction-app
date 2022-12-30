@@ -164,7 +164,7 @@ def main():
     if st.button("Tahminle"):
         output = predict(model, input_df)
         with st.spinner(text='Hesaplanıyor...'):
-            time.sleep(3)
+            time.sleep(2)
             st.success(f'Hastanın hastanede yatış süresi tahmini {output[0]:.0f} gündür.')
             st.subheader(f'{output[0]:.0f} gündür.')
     
