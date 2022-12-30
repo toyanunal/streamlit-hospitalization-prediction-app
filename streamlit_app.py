@@ -110,8 +110,8 @@ def get_user_input():
                             dtype=float,
                             index=['input'])
 
-    st.write('The input dataframe:')
-    st.dataframe(input_df)
+    #st.write('The input dataframe:')
+    #st.dataframe(input_df)
     return input_df
 
 # Function for making prediction
