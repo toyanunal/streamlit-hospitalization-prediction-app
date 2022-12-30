@@ -53,14 +53,6 @@ def get_user_input():
         antibiotic_24h = 0
     else:
         antibiotic_24h = 1
-
-    ventilation = st.selectbox('Ventilasyon tipi:', ['Yok','NIV','iMV'])
-    if ventilation == 'Yok':
-        ventilation = 0
-    elif ventilation == 'NIV':
-        ventilation = 1
-    elif ventilation == 'iMV':
-        ventilation = 2
     
     chorioamnionitis = st.selectbox('Koryoamniyonit:', ['Yok','Var'])
     if chorioamnionitis == 'Yok':
@@ -91,9 +83,17 @@ def get_user_input():
         penicillin = 0
     else:
         penicillin = 1
+    
+    ventilation = st.selectbox('Ventilasyon tipi:', ['Yok','NIV','iMV'])
+    if ventilation == 'Yok':
+        ventilation = 0
+    elif ventilation == 'NIV':
+        ventilation = 1
+    elif ventilation == 'iMV':
+        ventilation = 2
      
-    input_df = pd.DataFrame([[age, fluconazole, weigth, tpn, uak, polisitemia, antibiotic, amikacin, antibiotic_24h, ventilation, chorioamnionitis, birth, respiratory, ampicillin, penicillin]],
-                            columns=['age', 'fluconazole', 'weigth', 'tpn', 'uak', 'polisitemia', 'antibiotic', 'amikacin', 'antibiotic_24h', 'ventilation', 'chorioamnionitis', 'birth', 'respiratory', 'ampicillin', 'penicillin'],
+    input_df = pd.DataFrame([[age, fluconazole, weigth, tpn, uak, polisitemia, antibiotic, amikacin, antibiotic_24h, chorioamnionitis, birth, respiratory, ampicillin, penicillin, ventilation]],
+                            columns=['age', 'fluconazole', 'weigth', 'tpn', 'uak', 'polisitemia', 'antibiotic', 'amikacin', 'antibiotic_24h', 'chorioamnionitis', 'birth', 'respiratory', 'ampicillin', 'penicillin', 'ventilation'],
                             dtype=float,
                             index=['input'])
 
