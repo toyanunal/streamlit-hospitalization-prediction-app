@@ -171,5 +171,8 @@ def main():
                 my_bar.progress(percent_complete + 1)
             st.success(f'Hastanın hastanede yatış süresi tahmini {output[0]:.0f} gündür.')
 
+    graph = Image.open('rf_graphviz.svg')
+    st.image(graph, width=800)
+
 if __name__ == '__main__':
     main()
