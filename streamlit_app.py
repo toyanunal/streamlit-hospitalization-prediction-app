@@ -158,7 +158,7 @@ def main():
         page_icon="🧊",
         #layout="wide",
         #initial_sidebar_state="expanded"
-    )
+        )
 
     st.title("Hastanede Yatış Süresi Tahminleme")
     st.write("[![Star](https://img.shields.io/github/stars/toyanunal/streamlit-hospitalization-prediction-app.svg?logo=github&style=social)](https://gitHub.com/toyanunal/streamlit-hospitalization-prediction-app)")
@@ -167,7 +167,7 @@ def main():
     st.subheader("Lütfen aşağıdaki hasta bilgilerini giriniz:")
 
     #set_png_as_page_bg('background.png')
-    #set_url_as_page_bg('https://images.unsplash.com/photo-1542281286-9e0a16bb7366')
+    set_url_as_page_bg('https://images.unsplash.com/photo-1542281286-9e0a16bb7366')
 
     input_df = get_user_input()
     print(input_df)
