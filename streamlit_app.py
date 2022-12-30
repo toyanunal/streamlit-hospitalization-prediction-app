@@ -126,15 +126,7 @@ def main():
     </style>
     """
 
-    st.markdown(
-    f"""
-    <style>
-    p {
-    background-image: url('bg_image.jpg');
-    }
-    </style>
-    """, 
-    unsafe_allow_html=True)
+    st.markdown(bg_image, unsafe_allow_html=True)
 
 
 
