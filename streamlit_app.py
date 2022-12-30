@@ -2,9 +2,10 @@ import xgboost as xgb
 import streamlit as st
 import pandas as pd
 import numpy as np
-from PIL import Image
 import pickle as pkl
 import base64
+import time
+from PIL import Image
 
 # Function for user input
 def get_user_input():
@@ -164,20 +165,15 @@ def main():
         output = predict(model, input_df)
         st.success(f'Hastanın hastanede yatış süresi tahmini {output[0]:.0f} gündür.')
     
-    import time
+    
     my_bar = st.progress(0)
-    for percent_complete in range(100):
+    for percent_complete in range(20):
         time.sleep(0.1)
         my_bar.progress(percent_complete + 1)
-    st.spinner()
-    with st.spinner(text='In progress'):
-        time.sleep(5)
-        st.success('Done')
-    st.balloons()
-    st.error('Error message')
-    st.warning('Warning message')
-    st.info('Info message')
-    st.success('Success message')
+    # st.spinner()
+    # with st.spinner(text='In progress'):
+    #     time.sleep(5)
+    #     st.success('Done')
 
 if __name__ == '__main__':
     main()
