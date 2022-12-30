@@ -101,8 +101,8 @@ def get_user_input():
                             dtype=float,
                             index=['input'])
 
-    input_arr = np.array(input_df, dtype=object)
-    return input_arr
+    #input_arr = np.array(input_df, dtype=object)
+    return input_df
 
 # Function for making prediction
 def predict(model, input_df):
