@@ -1,5 +1,6 @@
 # Function for user input
 def get_user_input():
+    deneme = st.slider('Deneme:', min_value=21, max_value=45, value=30, step=1)
     week = st.number_input('Gestasyonel yaş (hafta):', min_value=21, max_value=45, value=30, step=1)
     day = st.radio('Gestasyonel yaş (gün):', ['0','1','2','3','4','5','6'])
     day = int(day)
