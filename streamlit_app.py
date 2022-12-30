@@ -105,7 +105,7 @@ def get_user_input():
                             columns=['Hafta', 'Flukonazol alımı', 'Doğum kilosu_kategorik', 'TPN', 'Umblikal Arter', 'Tanı-4', 'Ab var/yok', 'Ab-8', 'İlk 24 saat Ab', 'Mr-40', 'Doğum şekli', 'Tanı-1', 'Ab-14', 'Ab-12', 'Ventilasyon tipi (ilk yatış)'],
                             dtype=float,
                             index=['input'])
-
+    print(input_df)
     #input_arr = np.array(input_df, dtype=object)
     return input_df
 
