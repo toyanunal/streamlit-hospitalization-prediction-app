@@ -118,17 +118,25 @@ def main():
     # </div>
     # """
 
-    bg_image = f"""
+    bg_image = """
     <style>
     p {
     background-image: url('bg_image.jpg');
     }
     </style>
     """
-    st.markdown(bg_image, unsafe_allow_html=True)
+
+    st.markdown(
+    f"""
+    <style>
+    p {
+    background-image: url('bg_image.jpg');
+    }
+    </style>
+    """, 
+    unsafe_allow_html=True)
 
 
-    #st.markdown(html_temp,unsafe_allow_html=True)
 
     input_df = get_user_input()
     print(input_df)
