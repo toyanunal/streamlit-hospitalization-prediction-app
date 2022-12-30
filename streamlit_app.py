@@ -115,9 +115,9 @@ def predict(model, input_df):
 # Function for displaying the predictions
 def main():
     st.set_page_config(
-        page_title="Ex-stream-ly Cool App",
+        page_title="HYS Tahminleme",
         page_icon="🧊",
-        layout="wide",
+        #layout="wide",
         initial_sidebar_state="expanded"
     )
 
