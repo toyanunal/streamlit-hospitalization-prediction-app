@@ -48,7 +48,7 @@ def get_user_input():
     else:
         amikacin = 1
 
-    antibiotic_24h = st.selectbox('İlk 24 saat antibiyoterapi:', ['Yok','Var'])
+    antibiotic_24h = st.radio('İlk 24 saat antibiyoterapi:', ['Yok','Var'])
     if antibiotic_24h == 'Yok':
         antibiotic_24h = 0
     else:
