@@ -166,8 +166,8 @@ def main():
     st.image(qrcode, width=300)
     st.subheader("Lütfen aşağıdaki hasta bilgilerini giriniz:")
 
-    #set_png_as_page_bg('background.png')
-    set_url_as_page_bg("https://images.unsplash.com/photo-1542281286-9e0a16bb7366")
+    set_png_as_page_bg('background.png')
+    #set_url_as_page_bg("https://images.unsplash.com/photo-1542281286-9e0a16bb7366")
 
     input_df = get_user_input()
     print(input_df)
