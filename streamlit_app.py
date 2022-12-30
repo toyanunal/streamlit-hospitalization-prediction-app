@@ -122,10 +122,7 @@ def main():
     )
 
     st.title("Hastanede Yatış Süresi Tahminleme")
-
-    #<img alt="Star" src="https://img.shields.io/github/stars/jrieke/year-on-github.svg?logo=github&amp;style=social">
     st.write("[![Star](https://img.shields.io/github/stars/toyanunal/streamlit-hospitalization-prediction-app.svg?logo=github&style=social)](https://gitHub.com/toyanunal/streamlit-hospitalization-prediction-app)")
-    #st.write("[![Star](https://img.shields.io/github/stars/toyanunal>/<https://github.com/toyanunal/streamlit-hospitalization-prediction-app.svg?logo=github&style=social>)](<https://gitHub.com/toyanunal>/<https://github.com/toyanunal/streamlit-hospitalization-prediction-app>)")
     qrcode = Image.open('qrcode.png')
     st.image(qrcode, width=300)
     st.subheader("Lütfen aşağıdaki hasta bilgilerini giriniz:")
@@ -147,6 +144,15 @@ def main():
     }}
     </style>
     """
+
+    bg_image = '''
+    <style>
+    body {
+    background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
+    background-size: cover;
+    }
+    </style>
+    '''
 
     st.markdown(bg_image, unsafe_allow_html=True)
 
