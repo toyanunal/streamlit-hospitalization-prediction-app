@@ -108,7 +108,6 @@ def predict(model, input_df):
 # Function for displaying the predictions
 def main():
     st.title("Hastanede Yatış Süresi Tahminleme")
-    from PIL import Image
     qrcode = Image.open('qrcode.svg')
     st.image(qrcode, caption='QRCode', width=300)
     #st.image("https://www.oreilly.com/library/view/python-data-science/9781491912126/assets/pds_0101.png", width=300)
@@ -142,6 +141,7 @@ if __name__ == '__main__':
     import streamlit as st
     import pandas as pd
     import numpy as np
+    from PIL import Image
     import pickle as pkl
     main()
     
