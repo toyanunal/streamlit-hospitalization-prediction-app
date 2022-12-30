@@ -138,19 +138,6 @@ def set_png_as_page_bg(png_file):
     st.markdown(page_bg_img, unsafe_allow_html=True)
     return
 
-# Function for background image from URL
-def set_url_as_page_bg(url):
-    page_bg_img = '''
-    <style>
-    .stApp {
-    background-image: url("url");
-    background-size: cover;
-    }
-    </style>
-    '''
-    st.markdown(page_bg_img, unsafe_allow_html=True)
-    return
-
 # Function for displaying the predictions
 def main():
     st.set_page_config(
@@ -166,8 +153,7 @@ def main():
     st.image(qrcode, width=300)
     st.subheader("Lütfen aşağıdaki hasta bilgilerini giriniz:")
 
-    #set_png_as_page_bg('background.png')
-    set_url_as_page_bg("https://images.unsplash.com/photo-1542281286-9e0a16bb7366")
+    set_png_as_page_bg('background.png')
 
     input_df = get_user_input()
     print(input_df)
@@ -178,7 +164,7 @@ def main():
 
     if st.button("Tahminle"):
         output = predict(model, input_df)
-        st.success(f'Hastanın hastanede yatış süresi tahmini {output[0]:.1f} gündür.')
+        st.success(f'Hastanın hastanede yatış süresi tahmini {output[0]:.0f} gündür.')
 
 if __name__ == '__main__':
     main()
