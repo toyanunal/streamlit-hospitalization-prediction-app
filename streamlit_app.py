@@ -108,6 +108,9 @@ def predict(model, input_df):
 # Function for displaying the predictions
 def main():
     st.title("Hastanede Yatış Süresi Tahminleme")
+    from PIL import Image
+    qrcode = Image.open('qrcode.svg')
+    st.image(qrcode, caption='QRCode', width=300)
     #st.image("https://www.oreilly.com/library/view/python-data-science/9781491912126/assets/pds_0101.png", width=300)
     st.header("Lütfen aşağıdaki hasta bilgilerini giriniz:")
 
