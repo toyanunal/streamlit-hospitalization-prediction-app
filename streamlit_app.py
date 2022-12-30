@@ -110,7 +110,7 @@ def get_user_input():
                             index=['input'])
 
     st.write('The input dataframe:')
-    st.table(input_df)
+    st.dataframe(input_df)
     #input_arr = np.array(input_df, dtype=object)
     return input_df
 
@@ -142,7 +142,7 @@ def set_png_as_page_bg(png_file):
 def main():
     st.set_page_config(
         page_title="HYS Tahminleme Modeli",
-        page_icon="random", #🧊
+        page_icon="random",
         #layout="wide",
         #initial_sidebar_state="expanded"
         )
@@ -153,7 +153,7 @@ def main():
     st.image(qrcode, width=300)
     st.subheader("Lütfen aşağıdaki hasta bilgilerini giriniz:")
 
-    set_png_as_page_bg('background.png')
+    set_png_as_page_bg("background.png")
 
     input_df = get_user_input()
 
