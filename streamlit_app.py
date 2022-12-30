@@ -6,13 +6,15 @@ def get_user_input():
     day = int(day)
     age = week + day/7
 
+    deneme = st.checkbox('Flukonazol tedavisi aldı:')
+
     fluconazole = st.radio('Flukonazol tedavisi:', ['Yok','Var'])
     if fluconazole == 'Yok':
         fluconazole = 0
     else:
         fluconazole = 1
     
-    weigth = st.radio('Doğum ağırlığı (kategorik):', ['≤1000 gr','1001-1500 gr','1501-2500 gr','>2500 gr'])
+    weigth = st.multiselect('Doğum ağırlığı (kategorik):', ['≤1000 gr','1001-1500 gr','1501-2500 gr','>2500 gr'])
     if weigth == '≤1000 gr':
         weigth = 1
     elif weigth == '1001-1500 gr':
