@@ -122,7 +122,8 @@ def main():
     )
 
     st.title("Hastanede Yatış Süresi Tahminleme")
-    st.write("[![Star](<https://img.shields.io/github/stars/toyanunal>/<https://github.com/toyanunal/streamlit-hospitalization-prediction-app>.svg?logo=github&style=social)](<https://gitHub.com/toyanunal>/<https://github.com/toyanunal/streamlit-hospitalization-prediction-app>)")
+    [![Gmail Badge](https://img.shields.io/badge/-toyanunal-c14438?style=flat&logo=Gmail&logoColor=white&link=mailto:toyanunal@gmail.com)](mailto:toyanunal@gmail.com)
+    st.write("[![Star](<https://img.shields.io/github/stars/toyanunal>/<https://github.com/toyanunal/streamlit-hospitalization-prediction-app.svg?logo=github&style=social>)](<https://gitHub.com/toyanunal>/<https://github.com/toyanunal/streamlit-hospitalization-prediction-app>)")
     qrcode = Image.open('qrcode.png')
     st.image(qrcode, width=300)
     st.subheader("Lütfen aşağıdaki hasta bilgilerini giriniz:")
