@@ -126,7 +126,7 @@ def main():
     
 
     if st.button("Tahminle"):
-        #output = predict(model, input_df)
+        output = predict(model, input_df)
         st.success(f'Hastanın tahmini hastanede yatış süresi {output[0]:.1f} gündür')
 
 if __name__ == '__main__':
