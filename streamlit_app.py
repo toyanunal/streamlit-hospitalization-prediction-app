@@ -2,7 +2,7 @@
 def get_user_input():
     deneme = st.slider('Deneme:', min_value=21, max_value=45, value=30, step=1)
     week = st.number_input('Gestasyonel yaş (hafta):', min_value=21, max_value=45, value=30, step=1)
-    day = st.radio('Gestasyonel yaş (gün):', ['0','1','2','3','4','5','6'])
+    day = st.slider('Gestasyonel yaş (gün):', min_value=0, max_value=6, value=0, step=1)
     day = int(day)
     age = week + day/7
 
