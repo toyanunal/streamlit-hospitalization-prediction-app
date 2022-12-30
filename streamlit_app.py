@@ -116,7 +116,12 @@ def main():
     print(input_df)
 
     model = xgb.XGBRegressor()
-    model.load_model("XGBoost.json")
+
+    import pickle as pkl
+    with open("XGBoost.json", 'rb') as f:
+        model = pkl.load(f)
+    
+    #model.load_model("XGBoost.json")
     
     
 
