@@ -7,15 +7,10 @@ def get_user_input():
     age = week + day/7
 
     weight = st.radio('Doğum ağırlığı (kategorik):', ['≤1000 gr','1001-1500 gr','1501-2500 gr','>2500 gr'])
-    if weight == '≤1000 gr':
-        weight = 1
-    elif weight == '1001-1500 gr':
-        weight = 2
-    elif weight == '1501-2500 gr':
-        weight = 3
-    elif weight == '>2500 gr':
-        weight = 4
-    
+    weight = weight.map({'≤1000 gr': 1, '1001-1500 gr': 2, '1501-2500 gr': 3, '>2500 gr': 4})
+    print(weight)
+
+
     birth = st.radio('Doğum şekli:', ['C/S','NSVY'])
     if birth == 'C/S':
         birth = 1
@@ -95,11 +90,6 @@ def get_user_input():
         amikacin = 0
     else:
         amikacin = 1
-     
-    # input_df = pd.DataFrame([[age, fluconazole, weight, tpn, uak, polisitemia, antibiotic, amikacin, antibiotic_24h, chorioamnionitis, birth, respiratory, ampicillin, penicillin, ventilation]],
-    #                         columns=['age', 'fluconazole', 'weight', 'tpn', 'uak', 'polisitemia', 'antibiotic', 'amikacin', 'antibiotic_24h', 'chorioamnionitis', 'birth', 'respiratory', 'ampicillin', 'penicillin', 'ventilation'],
-    #                         dtype=float,
-    #                         index=['input'])
 
     input_df = pd.DataFrame([[age, fluconazole, weight, tpn, uak, polisitemia, antibiotic, amikacin, antibiotic_24h, chorioamnionitis, birth, respiratory, ampicillin, penicillin, ventilation]],
                             columns=['Hafta', 'Flukonazol alımı', 'Doğum kilosu_kategorik', 'TPN', 'Umblikal Arter', 'Tanı-4', 'Ab var/yok', 'Ab-8', 'İlk 24 saat Ab', 'Mr-40', 'Doğum şekli', 'Tanı-1', 'Ab-14', 'Ab-12', 'Ventilasyon tipi (ilk yatış)'],
