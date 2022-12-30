@@ -7,10 +7,15 @@ def get_user_input():
     age = week + day/7
 
     weight = st.radio('Doğum ağırlığı (kategorik):', ['≤1000 gr','1001-1500 gr','1501-2500 gr','>2500 gr'])
-    weight = weight.map({'≤1000 gr': 1, '1001-1500 gr': 2, '1501-2500 gr': 3, '>2500 gr': 4})
-    print(weight)
-
-
+    if weight == '≤1000 gr':
+        weight = 1
+    elif weight == '1001-1500 gr':
+        weight = 2
+    elif weight == '1501-2500 gr':
+        weight = 3
+    elif weight == '>2500 gr':
+        weight = 4
+    
     birth = st.radio('Doğum şekli:', ['C/S','NSVY'])
     if birth == 'C/S':
         birth = 1
