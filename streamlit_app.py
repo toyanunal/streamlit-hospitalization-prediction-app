@@ -119,14 +119,12 @@ def predict(model, input_df):
     prediction = model.predict(input_df)
     return prediction
 
-# Function for background image
-#import streamlit as st
+# Functions for background image from local
 @st.cache(allow_output_mutation=True)
 def get_base64_of_bin_file(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
     return base64.b64encode(data).decode()
-
 def set_png_as_page_bg(png_file):
     bin_str = get_base64_of_bin_file(png_file)
     page_bg_img = '''
@@ -137,7 +135,19 @@ def set_png_as_page_bg(png_file):
     }
     </style>
     ''' % bin_str
-    
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+    return
+
+# Function for background image from URL
+def set_png_as_page_bg_by_url(url):
+    page_bg_img = '''
+    <style>
+    .stApp {
+    background-image: url(url);
+    background-size: cover;
+    }
+    </style>
+    '''
     st.markdown(page_bg_img, unsafe_allow_html=True)
     return
 
@@ -157,31 +167,14 @@ def main():
     st.subheader("Lütfen aşağıdaki hasta bilgilerini giriniz:")
 
     #set_png_as_page_bg('background.png')
-
-    bg_image = '''
-    <style>
-    .stApp {
-    background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
-    background-size: cover;
-    }
-    </style>
-    '''
-
-    st.markdown(bg_image, unsafe_allow_html=True)
-
-
+    #set_url_as_page_bg('https://images.unsplash.com/photo-1542281286-9e0a16bb7366')
 
     input_df = get_user_input()
     print(input_df)
 
     model = xgb.XGBRegressor()
-
     with open("XGBoost.json", 'rb') as f:
         model = pkl.load(f)
-    
-    #model.load_model("XGBoost.json")
-    
-    
 
     if st.button("Tahminle"):
         output = predict(model, input_df)
@@ -189,5 +182,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
-#@st.cache
