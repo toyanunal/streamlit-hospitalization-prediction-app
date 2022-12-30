@@ -100,10 +100,9 @@ def get_user_input():
                             columns=['Hafta', 'Flukonazol alımı', 'Doğum kilosu_kategorik', 'TPN', 'Umblikal Arter', 'Tanı-4', 'Ab var/yok', 'Ab-8', 'İlk 24 saat Ab', 'Mr-40', 'Doğum şekli', 'Tanı-1', 'Ab-14', 'Ab-12', 'Ventilasyon tipi (ilk yatış)'],
                             dtype=float,
                             index=['input'])
-    # print all columns of dataframe
+
     st.write('The input dataframe:')
-    st.table(input_df)    
-    print(input_df)
+    st.table(input_df)
     #input_arr = np.array(input_df, dtype=object)
     return input_df
 
@@ -113,7 +112,7 @@ def predict(model, input_df):
     return prediction
 
 # Function for background image
-@st.cache(allow_output_mutation=True)
+#@st.cache(allow_output_mutation=True)
 def get_base64_of_bin_file(bin_file):
     with open(bin_file, 'rb') as f:
         data = f.read()
@@ -192,6 +191,7 @@ if __name__ == '__main__':
     import numpy as np
     from PIL import Image
     import pickle as pkl
+    import base64
     main()
     
 #@st.cache
