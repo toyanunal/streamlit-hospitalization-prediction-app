@@ -1,3 +1,11 @@
+import xgboost as xgb
+import streamlit as st
+import pandas as pd
+import numpy as np
+from PIL import Image
+import pickle as pkl
+import base64
+
 # Function for user input
 def get_user_input():
     week = st.slider('Gestasyonel yaş (hafta):', min_value=21, max_value=45, value=33, step=1)
@@ -112,7 +120,7 @@ def predict(model, input_df):
     return prediction
 
 # Function for background image
-import streamlit as st
+#import streamlit as st
 @st.cache(allow_output_mutation=True)
 def get_base64_of_bin_file(bin_file):
     with open(bin_file, 'rb') as f:
@@ -180,13 +188,6 @@ def main():
         st.success(f'Hastanın hastanede yatış süresi tahmini {output[0]:.1f} gündür.')
 
 if __name__ == '__main__':
-    import xgboost as xgb
-    import streamlit as st
-    import pandas as pd
-    import numpy as np
-    from PIL import Image
-    import pickle as pkl
-    import base64
     main()
     
 #@st.cache
