@@ -118,6 +118,17 @@ def main():
     # <h2 style="color:white;text-align:center;">Streamlit XGBoost ML App </h2>
     # </div>
     # """
+
+    bg_image = """
+    <style>
+    p {
+    background-image: url('bg_image.jpg');
+    }
+    </style>
+    """
+    st.markdown(bg_image, unsafe_allow_html=True)
+
+
     #st.markdown(html_temp,unsafe_allow_html=True)
 
     input_df = get_user_input()
