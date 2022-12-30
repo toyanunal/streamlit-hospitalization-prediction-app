@@ -96,8 +96,13 @@ def get_user_input():
     elif ventilation == 'iMV':
         ventilation = 2
      
-    input_df = pd.DataFrame([[age, fluconazole, weigth, tpn, uak, polisitemia, antibiotic, amikacin, antibiotic_24h, chorioamnionitis, birth, respiratory, ampicillin, penicillin, ventilation]],
-                            columns=['age', 'fluconazole', 'weigth', 'tpn', 'uak', 'polisitemia', 'antibiotic', 'amikacin', 'antibiotic_24h', 'chorioamnionitis', 'birth', 'respiratory', 'ampicillin', 'penicillin', 'ventilation'],
+    # input_df = pd.DataFrame([[age, fluconazole, weigth, tpn, uak, polisitemia, antibiotic, amikacin, antibiotic_24h, chorioamnionitis, birth, respiratory, ampicillin, penicillin, ventilation]],
+    #                         columns=['age', 'fluconazole', 'weigth', 'tpn', 'uak', 'polisitemia', 'antibiotic', 'amikacin', 'antibiotic_24h', 'chorioamnionitis', 'birth', 'respiratory', 'ampicillin', 'penicillin', 'ventilation'],
+    #                         dtype=float,
+    #                         index=['input'])
+
+    input_df = pd.DataFrame([[respiratory, amikacin, polisitemia, chorioamnionitis, fluconazole, weigth, ventilation, birth, ampicillin, age, antibiotic_24h, penicillin, uak, tpn, antibiotic]],
+                            columns=['respiratory', 'amikacin', 'polisitemia', 'chorioamnionitis', 'fluconazole', 'weigth', 'ventilation', 'birth', 'ampicillin', 'age', 'antibiotic_24h', 'penicillin', 'uak', 'tpn', 'antibiotic'],
                             dtype=float,
                             index=['input'])
 
