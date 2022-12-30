@@ -170,16 +170,6 @@ def main():
                 time.sleep(0.01)
                 my_bar.progress(percent_complete + 1)
             st.success(f'Hastanın hastanede yatış süresi tahmini {output[0]:.0f} gündür.')
-    
-    
-    # my_bar = st.progress(0)
-    # for percent_complete in range(20):
-    #     time.sleep(0.1)
-    #     my_bar.progress(percent_complete + 1)
-    # st.spinner()
-    # with st.spinner(text='In progress'):
-    #     time.sleep(5)
-    #     st.success('Done')
 
 if __name__ == '__main__':
     main()
