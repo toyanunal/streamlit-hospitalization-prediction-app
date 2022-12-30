@@ -8,7 +8,7 @@ def get_user_input():
     else:
         fluconazole = 1
     
-    weigth = st.selectbox('Doğum ağırlığı (kategorik):', ['≤1000 gr','1001-1500 gr','1501-2500 gr','>2500 gr'])
+    weigth = st.radio('Doğum ağırlığı (kategorik):', ['≤1000 gr','1001-1500 gr','1501-2500 gr','>2500 gr'])
     if weigth == '≤1000 gr':
         weigth = 1
     elif weigth == '1001-1500 gr':
@@ -18,31 +18,31 @@ def get_user_input():
     elif weigth == '>2500 gr':
         weigth = 4
 
-    tpn = st.selectbox('TPN ihtiyacı:', ['Yok','Var'])
+    tpn = st.radio('TPN ihtiyacı:', ['Yok','Var'])
     if tpn == 'Yok':
         tpn = 0
     else:
         tpn = 1
     
-    uak = st.selectbox('UAK:', ['Yok','Var'])
+    uak = st.radio('UAK:', ['Yok','Var'])
     if uak == 'Yok':
         uak = 0
     else:
         uak = 1
 
-    polisitemia = st.selectbox('Polisitemi:', ['Yok','Var'])
+    polisitemia = st.radio('Polisitemi:', ['Yok','Var'])
     if polisitemia == 'Yok':
         polisitemia = 0
     else:
         polisitemia = 1
 
-    antibiotic = st.selectbox('Maternal risk faktörü:', ['Yok','Var'])
+    antibiotic = st.radio('Maternal risk faktörü:', ['Yok','Var'])
     if antibiotic == 'Yok':
         antibiotic = 0
     else:
         antibiotic = 1
 
-    amikacin = st.selectbox('Amikasin antibiyoterapisi:', ['Yok','Var'])
+    amikacin = st.radio('Amikasin antibiyoterapisi:', ['Yok','Var'])
     if amikacin == 'Yok':
         amikacin = 0
     else:
@@ -54,37 +54,37 @@ def get_user_input():
     else:
         antibiotic_24h = 1
     
-    chorioamnionitis = st.selectbox('Koryoamniyonit:', ['Yok','Var'])
+    chorioamnionitis = st.radio('Koryoamniyonit:', ['Yok','Var'])
     if chorioamnionitis == 'Yok':
         chorioamnionitis = 0
     else:
         chorioamnionitis = 1
     
-    birth = st.selectbox('Doğum şekli:', ['C/S','NSVY'])
+    birth = st.radio('Doğum şekli:', ['C/S','NSVY'])
     if birth == 'C/S':
         birth = 1
     else:
         birth = 0
 
-    respiratory = st.selectbox('Solunumsal patolojiler:', ['Yok','Var'])
+    respiratory = st.radio('Solunumsal patolojiler:', ['Yok','Var'])
     if respiratory == 'Yok':
         respiratory = 0
     else:
         respiratory = 1
     
-    ampicillin = st.selectbox('Ampisilin antibiyoterapisi:', ['Yok','Var'])
+    ampicillin = st.radio('Ampisilin antibiyoterapisi:', ['Yok','Var'])
     if ampicillin == 'Yok':
         ampicillin = 0
     else:
         ampicillin = 1
  
-    penicillin = st.selectbox('Penisilin antibiyoterapisi:', ['Yok','Var'])
+    penicillin = st.radio('Penisilin antibiyoterapisi:', ['Yok','Var'])
     if penicillin == 'Yok':
         penicillin = 0
     else:
         penicillin = 1
     
-    ventilation = st.selectbox('Ventilasyon tipi:', ['Yok','NIV','iMV'])
+    ventilation = st.radio('Ventilasyon tipi:', ['Yok','NIV','iMV'])
     if ventilation == 'Yok':
         ventilation = 0
     elif ventilation == 'NIV':
