@@ -163,16 +163,16 @@ def main():
 
     if st.button("Tahminle"):
         output = predict(model, input_df)
-        st.spinner()
-        with st.spinner(text='In progress'):
-            time.sleep(1)
+        #st.spinner()
+        with st.spinner(text='Hesaplanıyor...'):
+            time.sleep(3)
             st.success(f'Hastanın hastanede yatış süresi tahmini {output[0]:.0f} gündür.')
     
     
-    my_bar = st.progress(0)
-    for percent_complete in range(20):
-        time.sleep(0.1)
-        my_bar.progress(percent_complete + 1)
+    # my_bar = st.progress(0)
+    # for percent_complete in range(20):
+    #     time.sleep(0.1)
+    #     my_bar.progress(percent_complete + 1)
     # st.spinner()
     # with st.spinner(text='In progress'):
     #     time.sleep(5)
