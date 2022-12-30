@@ -128,6 +128,7 @@ if __name__ == '__main__':
     import xgboost as xgb
     import streamlit as st
     import pandas as pd
+    import numpy as np
     main()
     
 #@st.cache
