@@ -1,7 +1,7 @@
 # Function for user input
 def get_user_input():
-    week = st.slider('Gestasyonel yaş (hafta):', min_value=21, max_value=45, value=30, step=1)
-    #week = st.number_input('Gestasyonel yaş (hafta):', min_value=21, max_value=45, value=33, step=1)
+    week = st.slider('Gestasyonel yaş (hafta):', min_value=21, max_value=45, value=33, step=1)
+    #week = st.number_input('Gestasyonel yaş (hafta):', min_value=21, max_value=45, value=30, step=1)
     day = st.slider('Gestasyonel yaş (gün):', min_value=0, max_value=6, value=3, step=1)
     day = int(day)
     age = week + day/7
