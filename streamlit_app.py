@@ -1,40 +1,58 @@
 # Function for user input
 def get_user_input():
-    fluconazole = st.selectbox('Flukonazol tedavisi:', ['Evet','Hayır'])
-    if fluconazole == 'Evet':
-        fluconazole = 1
-    else:
-        fluconazole = 0
+    age = st.number_input('Gestasyonel yaş (hafta):', min_value=21, max_value=45, value=38)
     
+    fluconazole = st.selectbox('Flukonazol tedavisi:', ['Yok','Var'])
+    if fluconazole == 'Yok':
+        fluconazole = 0
+    else:
+        fluconazole = 1
+    
+    weigth = st.selectbox('Doğum ağırlığı (kategorik):', ['≤1000 gr','1001-1500 gr','1501-2500 gr','>2500 gr'])
+    if weigth == '≤1000 gr':
+        weigth = 1
+    elif weigth == '1001-1500 gr':
+        weigth = 2
+    elif weigth == '1501-2500 gr':
+        weigth = 3
+    elif weigth == '>2500 gr':
+        weigth = 4
+
     tpn = st.selectbox('TPN ihtiyacı:', ['Yok','Var'])
     if tpn == 'Yok':
         tpn = 0
     else:
         tpn = 1
     
-    age = st.number_input('Gestasyonel yaş (hafta):', min_value=21, max_value=45, value=38)
-    
-    weigth = st.selectbox('Doğum ağırlığı (kategorik):', ['≤1000','1001-1500','1501-2500','>2500'])
-    if weigth == '≤1000':
-        weigth = 1
-    elif weigth == '1001-1500':
-        weigth = 2
-    elif weigth == '1501-2500':
-        weigth = 3
-    elif weigth == '>2500':
-        weigth = 4
-    
-    uak = st.selectbox('UAK:', ['Evet','Hayır'])
-    if uak == 'Evet':
-        uak = 1
-    else:
+    uak = st.selectbox('UAK:', ['Yok','Var'])
+    if uak == 'Yok':
         uak = 0
-
-    polisitemi = st.selectbox('Polisitemi:', ['Evet','Hayır'])
-    if polisitemi == 'Evet':
-        polisitemi = 1
     else:
-        polisitemi = 0
+        uak = 1
+
+    polisitemia = st.selectbox('Polisitemi:', ['Yok','Var'])
+    if polisitemia == 'Yok':
+        polisitemia = 0
+    else:
+        polisitemia = 1
+
+    antibiotic = st.selectbox('Maternal risk faktörü:', ['Yok','Var'])
+    if antibiotic == 'Yok':
+        antibiotic = 0
+    else:
+        antibiotic = 1
+
+    amikacin = st.selectbox('Amikasin antibiyoterapisi:', ['Yok','Var'])
+    if amikacin == 'Yok':
+        amikacin = 0
+    else:
+        amikacin = 1
+
+    antibiotic_24h = st.selectbox('İlk 24 saat antibiyoterapi:', ['Yok','Var'])
+    if antibiotic_24h == 'Yok':
+        antibiotic_24h = 0
+    else:
+        antibiotic_24h = 1
 
     ventilation = st.selectbox('Ventilasyon tipi:', ['Yok','NIV','iMV'])
     if ventilation == 'Yok':
@@ -44,50 +62,38 @@ def get_user_input():
     elif ventilation == 'iMV':
         ventilation = 2
     
-    antibiotic = st.selectbox('İlk 24 saat antibiyoterapi:', ['Evet','Hayır'])
-    if antibiotic == 'Evet':
-        antibiotic = 1
+    chorioamnionitis = st.selectbox('Koryoamniyonit:', ['Yok','Var'])
+    if chorioamnionitis == 'Yok':
+        chorioamnionitis = 0
     else:
-        antibiotic = 0
+        chorioamnionitis = 1
     
+    birth = st.selectbox('Doğum şekli:', ['C/S','NSVY'])
+    if birth == 'C/S':
+        birth = 1
+    else:
+        birth = 0
+
     respiratory = st.selectbox('Solunumsal patolojiler:', ['Yok','Var'])
     if respiratory == 'Yok':
         respiratory = 0
     else:
         respiratory = 1
     
-    maternal = st.selectbox('Maternal risk faktörü:', ['Yok','Var'])
-    if maternal == 'Yok':
-        maternal = 0
-    else:
-        maternal = 1
-    
-    chorioamnionitis = st.selectbox('Koryoamniyonit:', ['Evet','Hayır'])
-    if chorioamnionitis == 'Evet':
-        chorioamnionitis = 1
-    else:
-        chorioamnionitis = 0
-    
-    penicillin = st.selectbox('Penisilin antibiyoterapisi:', ['Evet','Hayır'])
-    if penicillin == 'Evet':
-        penicillin = 1
-    else:
-        penicillin = 0
-    
-    ampicillin = st.selectbox('Ampisilin antibiyoterapisi:', ['Evet','Hayır'])
-    if ampicillin == 'Evet':
-        ampicillin = 1
-    else:
+    ampicillin = st.selectbox('Ampisilin antibiyoterapisi:', ['Yok','Var'])
+    if ampicillin == 'Yok':
         ampicillin = 0
-    
-    amikacin = st.selectbox('Amikasin antibiyoterapisi:', ['Evet','Hayır'])
-    if amikacin == 'Evet':
-        amikacin = 1
     else:
-        amikacin = 0
-    
-    input_df = pd.DataFrame([[fluconazole, tpn, age, weigth, uak, polisitemi, ventilation, antibiotic, respiratory, maternal, chorioamnionitis, penicillin, ampicillin, amikacin]],
-                            columns=['fluconazole', 'tpn', 'age', 'weigth', 'uak', 'polisitemi', 'ventilation', 'antibiotic', 'respiratory', 'maternal', 'chorioamnionitis', 'penicillin', 'ampicillin', 'amikacin'],
+        ampicillin = 1
+ 
+    penicillin = st.selectbox('Penisilin antibiyoterapisi:', ['Yok','Var'])
+    if penicillin == 'Yok':
+        penicillin = 0
+    else:
+        penicillin = 1
+     
+    input_df = pd.DataFrame([[age, fluconazole, weigth, tpn, uak, polisitemia, antibiotic, amikacin, antibiotic_24h, ventilation, chorioamnionitis, birth, respiratory, ampicillin, penicillin]],
+                            columns=['age', 'fluconazole', 'weigth', 'tpn', 'uak', 'polisitemia', 'antibiotic', 'amikacin', 'antibiotic_24h', 'ventilation', 'chorioamnionitis', 'birth', 'respiratory', 'ampicillin', 'penicillin'],
                             dtype=float,
                             index=['input'])
 
@@ -117,7 +123,6 @@ def main():
 
     model = xgb.XGBRegressor()
 
-    import pickle as pkl
     with open("XGBoost.json", 'rb') as f:
         model = pkl.load(f)
     
@@ -134,6 +139,7 @@ if __name__ == '__main__':
     import streamlit as st
     import pandas as pd
     import numpy as np
+    import pickle as pkl
     main()
     
 #@st.cache
