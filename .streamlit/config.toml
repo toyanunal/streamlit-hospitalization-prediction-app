@@ -1,1 +1,4 @@
-text
+[theme]
+
+base = "dark"
+primaryColor = "FFFFFF"
