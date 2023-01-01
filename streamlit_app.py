@@ -16,7 +16,7 @@ def get_user_input():
     age = week + day/7
     age = (age - 34.44) / 3.70 # normalization by mean=34.44 and std=3.70
 
-    weight = st.radio('Doğum ağırlığı (kategorik):', ['≤1000 gr','1001-1500 gr','1501-2500 gr','>2500 gr'], default='>2500 gr')
+    weight = st.radio('Doğum ağırlığı (kategorik):', ['≤1000 gr','1001-1500 gr','1501-2500 gr','>2500 gr'])
     if weight == '≤1000 gr':
         weight = 1
     elif weight == '1001-1500 gr':
@@ -153,7 +153,7 @@ def main():
     st.image(qrcode, width=300)
     st.subheader("Lütfen aşağıdaki hasta bilgilerini giriniz:")
 
-    set_png_as_page_bg("background.png")
+    set_png_as_page_bg("background-1.png")
 
     input_df = get_user_input()
 
