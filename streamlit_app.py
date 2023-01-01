@@ -111,8 +111,6 @@ def get_user_input():
                             dtype=float,
                             index=['input'])
 
-    #st.write('The input dataframe:')
-    #st.dataframe(input_df)
     return input_df
 
 # Function for making prediction
@@ -158,7 +156,6 @@ def main():
     set_png_as_page_bg("background.png")
 
     input_df = get_user_input()
-    st.dataframe(input_df)
 
     model = xgb.XGBRegressor()
     with open("XGBoost.sav", 'rb') as f:
@@ -166,12 +163,7 @@ def main():
 
     if st.button("Tahminle"):
         output = predict(model, input_df)
-        with st.spinner(text='Hesaplanıyor...'):
-            my_bar = st.progress(0)
-            for percent_complete in range(100):
-                time.sleep(0.01)
-                my_bar.progress(percent_complete + 1)
-            st.success(f'Hastanın hastanede yatış süresi tahmini {output[0]:.0f} gündür.')
+        st.success(f'Hastanın hastanede yatış süresi tahmini {output[0]:.0f} gündür.')
 
 if __name__ == '__main__':
     main()
