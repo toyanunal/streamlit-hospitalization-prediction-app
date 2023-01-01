@@ -158,6 +158,7 @@ def main():
     set_png_as_page_bg("background.png")
 
     input_df = get_user_input()
+    st.dataframe(input_df)
 
     model = xgb.XGBRegressor()
     with open("XGBoost.sav", 'rb') as f:
