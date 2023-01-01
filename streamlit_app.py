@@ -1,10 +1,8 @@
+import pandas as pd
 import xgboost as xgb
 import streamlit as st
-import pandas as pd
-import numpy as np
 import pickle as pkl
 import base64
-import time
 from PIL import Image
 
 # Function for user input
@@ -153,7 +151,7 @@ def main():
     st.image(qrcode, width=300)
     st.subheader("Lütfen aşağıdaki hasta bilgilerini giriniz:")
 
-    set_png_as_page_bg("background-1.png")
+    set_png_as_page_bg("background_light.png")
 
     input_df = get_user_input()
 
