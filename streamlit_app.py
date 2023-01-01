@@ -14,6 +14,7 @@ def get_user_input():
     day = st.slider('Gestasyonel yaş (gün):', min_value=0, max_value=6, value=3, step=1)
     day = int(day)
     age = week + day/7
+    age = (age - 34.44) / 3.70 # normalization by mean=34.44 and std=3.70
 
     weight = st.radio('Doğum ağırlığı (kategorik):', ['≤1000 gr','1001-1500 gr','1501-2500 gr','>2500 gr'])
     if weight == '≤1000 gr':
@@ -145,7 +146,7 @@ def main():
         page_title="HYS Tahminleme Modeli",
         page_icon="random",
         layout="centered",
-        initial_sidebar_state="auto"
+        initial_sidebar_state="auto",
         )
 
     st.title("Hastanede Yatış Süresi Tahminleme")
