@@ -1,7 +1,7 @@
-# Hospitalization Prediction App
+# Hospitalization Time Prediction App
 
 ## Description
-This Streamlit application uses a pretrained XGBoost model to predict the number of days a patient will be hospitalized. The prediction is based on various inputs gathered during the first 24 hours of the patient's stay. This tool is designed to help health professionals plan their treatment schedule and inform the patient's parents about the possible hospitalization time.
+This Streamlit application uses a pre-trained XGBoost model to predict the number of days a patient will be hospitalized. The prediction is based on various inputs gathered during the first 24 hours of the patient's stay. This tool is designed to help health professionals plan their treatment schedule and inform the patient's parents about the possible hospitalization time.
 
 ## Deployed Application
 * [https://hospitalization-prediction-model.streamlit.app/](https://hospitalization-prediction-model.streamlit.app/)
